@@ -1,0 +1,77 @@
+body {
+    background-image: url('imm/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: blue; /* Turns all text words blue */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: blue;
+}
+
+p {
+    text-align: center;
+    line-height: 1.6;
+    color: blue;
+}
+
+ul, ol {
+    width: 350px;
+    margin: 10px auto;
+    text-align: center;
+    list-style-position: inside;
+}
+
+a {
+    color: blue;
+    margin: 10px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+/* SHS DAYS PAGE */
+
+.shs-container {
+    background-color: lightblue;
+    border: 3px solid blue;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.shs-container h1,
+.shs-container h2,
+.shs-container p {
+    text-align: center;
+    color: blue;
+}
+
+.shs-container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+}

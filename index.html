@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Skins Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #030814;
+            background-image: 
+                linear-gradient(rgba(3, 8, 20, 0.65), rgba(3, 8, 20, 0.88)), 
+                url('bgpic.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover {
+            color: #38bdf8;
+        }
+
+        .nav-btn-skins {
+            color: #38bdf8 !important;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .nav-btn-skins:hover {
+            background: rgba(56, 189, 248, 0.25) !important;
+            color: #ffffff !important;
+        }
+
+        .hero-banner {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(8, 20, 41, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .hero-banner h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+        }
+
+        .hero-banner p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(10, 25, 47, 0.75);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.6);
+        }
+
+        .card-header {
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .card-skins {
+            display: block;
+            font-size: 0.75rem;
+            color: #38bdf8;
+            opacity: 0.85;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+            color: #94a3b8;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .footer span {
+            color: #38bdf8;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 8, 20, 0.92);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: rgba(10, 25, 47, 0.98);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            border-radius: 20px;
+            max-width: 1100px;
+            width: 100%;
+            padding: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+            position: relative;
+            max-height: 92vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #38bdf8;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .modal-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #38bdf8;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: rgba(3, 8, 20, 0.85);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            text-align: center;
+            padding-bottom: 12px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            background-color: #02050b;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .gallery-item span {
+            font-size: 0.95rem;
+            color: #f8fafc;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero-story {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .hero-story h3 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .hero-story p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="logo">MLBB <span>SKINS</span></div>
+            <nav class="nav-menu">
+                <a href="#">HOME</a>
+                <a onclick="openGallery('allSkinsModal')" class="nav-btn-skins">VIEW ALL SKINS</a>
+            </nav>
+        </header>
+
+        <section class="hero-banner">
+            <span class="badge">EXCLUSIVE SKIN COLLECTION</span>
+            <h1>MARKSMAN SKIN VAULT</h1>
+            <p>Step into the arena and collect the rarest marksman skins and exclusive wallpapers.</p>
+        </section>
+
+        <section class="grid-section">
+            <div class="card" onclick="openGallery('grangerModal')">
+                <div class="card-header">
+                    <h3>🎯 GRANGER</h3>
+                    <span class="card-skins">Starfall Knight, Agent Z, Exorcist Granger</span>
+                </div>
+                <p>Click to explore the dark melodies, lethal gunplay, and tragic past of the Demon Hunter.</p>
+            </div>
+
+            <div class="card" onclick="openGallery('natanModal')">
+                <div class="card-header">
+                    <h3>🌌 NATAN</h3>
+                    <span class="card-skins">Temporal Vortex, Captain Chrono, Tidal Lord</span>
+                </div>
+                <p>Click to uncover the futuristic spacetime secrets and temporal powers of the Spacetime Walker.</p>
+            </div>
+
+            <div class="card" onclick="openGallery('beatrixModal')">
+                <div class="card-header">
+                    <h3>⚡ BEATRIX</h3>
+                    <span class="card-skins">Light Chaser, Vibrant Fiesta, Stellar Brilliance</span>
+                </div>
+                <p>Click to check out the heavy tactical arsenal and inventive brilliance of Eruditio's genius.</p>
+            </div>
+
+            <div class="card" onclick="openGallery('harithModal')">
+                <div class="card-header">
+                    <h3>✨ HARITH</h3>
+                    <span class="card-skins">Killua, EVOS Legends, Rebel Emberfang</span>
+                </div>
+                <p>Click to reveal the lightning-fast time magic and agility of the Leonin prodigy.</p>
+            </div>
+
+            <div class="card" onclick="openGallery('moskovModal')">
+                <div class="card-header">
+                    <h3>🔥 MOSKOV</h3>
+                    <span class="card-skins">Infernal Wyrmlord, Doom Incarnate, Twillight Dragon</span>
+                </div>
+                <p>Click to witness the vengeance, dark abyss powers, and deadly spear of the fallen warrior.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 MLBB Skins Hub • Crafted with passion for <span>My Favorite Heroes and Favorite Skins</span></p>
+        </footer>
+    </div>
+
+    <div id="allSkinsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery('allSkinsModal')">&times;</span>
+            <h2 class="modal-title">ALL HERO SKINS</h2>
+            <div class="image-gallery">
+                <div class="gallery-item"><img src="granger 1.jpg" alt="Starfall Knight"><span>Starfall Knight</span></div>
+                <div class="gallery-item"><img src="granger 2.jpg" alt="Agent Z"><span>Agent Z</span></div>
+                <div class="gallery-item"><img src="granger 3.jpg" alt="Exorcist Granger"><span>Exorcist Granger</span></div>
+                
+                <div class="gallery-item"><img src="natan1.jpg" alt="Temporal Vortex"><span>Temporal Vortex</span></div>
+                <div class="gallery-item"><img src="natan2.jpg" alt="Captain Chrono"><span>Captain Chrono</span></div>
+                <div class="gallery-item"><img src="natan3.jpg" alt="Tidal Lord"><span>Tidal Lord</span></div>
+                
+                <div class="gallery-item"><img src="beatrix1.jpg" alt="Light Chaser"><span>Light Chaser</span></div>
+                <div class="gallery-item"><img src="beatrix2.jpg" alt="Vibrant Fiesta"><span>Vibrant Fiesta</span></div>
+                <div class="gallery-item"><img src="beatrix3.jpg" alt="Stellar Brilliance"><span>Stellar Brilliance</span></div>
+                
+                <div class="gallery-item"><img src="harith1.jpg" alt="Killua"><span>Killua</span></div>
+                <div class="gallery-item"><img src="harith2.jpg" alt="EVOS Legends"><span>EVOS Legends</span></div>
+                <div class="gallery-item"><img src="harith3.jpg" alt="Rebel Emberfang"><span>Rebel Emberfang</span></div>
+                
+                <div class="gallery-item"><img src="moskov1.jpg" alt="Infernal Wyrmlord"><span>Infernal Wyrmlord</span></div>
+                <div class="gallery-item"><img src="moskov2.jpg" alt="Doom Incarnate"><span>Doom Incarnate</span></div>
+                <div class="gallery-item"><img src="moskov3.jpg" alt="Twillight Dragon"><span>Twillight Dragon</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="grangerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery('grangerModal')">&times;</span>
+            <h2 class="modal-title">GRANGER WALLPAPERS</h2>
+            <div class="image-gallery">
+                <div class="gallery-item"><img src="granger 1.jpg" alt="Starfall Knight"><span>Starfall Knight</span></div>
+                <div class="gallery-item"><img src="granger 2.jpg" alt="Agent Z"><span>Agent Z</span></div>
+                <div class="gallery-item"><img src="granger 3.jpg" alt="Exorcist Granger"><span>Exorcist Granger</span></div>
+            </div>
+            <div class="hero-story">
+                <h3>📖 GRANGER'S BACKGROUND STORY</h3>
+                <p>Granger was once an orphan saved from the Moniyan Empire's war against the Demons. Marked by tragedy and silence, he found solace not in human words, but in the melancholic melodies of his violin and the precision of his trusted gun.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="natanModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery('natanModal')">&times;</span>
+            <h2 class="modal-title">NATAN WALLPAPERS</h2>
+            <div class="image-gallery">
+                <div class="gallery-item"><img src="natan1.jpg" alt="Temporal Vortex"><span>Temporal Vortex</span></div>
+                <div class="gallery-item"><img src="natan2.jpg" alt="Captain Chrono"><span>Captain Chrono</span></div>
+                <div class="gallery-item"><img src="natan3.jpg" alt="Tidal Lord"><span>Tidal Lord</span></div>
+            </div>
+            <div class="hero-story">
+                <h3>📖 NATAN'S BACKGROUND STORY</h3>
+                <p>Natan came from a future where the world was destroyed by the war between Light and Darkness. As a brilliant scientist from Eruditio, he discovered a way to travel through time and returned to the past to change history and prevent humanity's destruction.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="beatrixModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery('beatrixModal')">&times;</span>
+            <h2 class="modal-title">BEATRIX WALLPAPERS</h2>
+            <div class="image-gallery">
+                <div class="gallery-item"><img src="beatrix1.jpg" alt="Light Chaser"><span>Light Chaser</span></div>
+                <div class="gallery-item"><img src="beatrix2.jpg" alt="Vibrant Fiesta"><span>Vibrant Fiesta</span></div>
+                <div class="gallery-item"><img src="beatrix3.jpg" alt="Stellar Brilliance"><span>Stellar Brilliance</span></div>
+            </div>
+            <div class="hero-story">
+                <h3>📖 BEATRIX'S BACKGROUND STORY</h3>
+                <p>Beatrix was a gifted inventor from Eruditio who loved creating weapons and machines. She preferred experimenting over traditional rules and used her four powerful guns to protect her city from danger.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="harithModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery('harithModal')">&times;</span>
+            <h2 class="modal-title">HARITH WALLPAPERS</h2>
+            <div class="image-gallery">
+                <div class="gallery-item"><img src="harith1.jpg" alt="Killua"><span>Killua</span></div>
+                <div class="gallery-item"><img src="harith2.jpg" alt="EVOS Legends"><span>EVOS Legends</span></div>
+                <div class="gallery-item"><img src="harith3.jpg" alt="Rebel Emberfang"><span>Rebel Emberfang</span></div>
+            </div>
+            <div class="hero-story">
+                <h3>📖 HARITH'S BACKGROUND STORY</h3>
+                <p>Harith is a young Leonin gifted with powerful magic and the ability to manipulate time. He was chosen by the Moniyan Empire to become a special mage, using his exceptional skills to fight enemies and protect the Land of Dawn.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="moskovModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery('moskovModal')">&times;</span>
+            <h2 class="modal-title">MOSKOV WALLPAPERS</h2>
+            <div class="image-gallery">
+                <div class="gallery-item"><img src="moskov1.jpg" alt="Infernal Wyrmlord"><span>Infernal Wyrmlord</span></div>
+                <div class="gallery-item"><img src="moskov2.jpg" alt="Doom Incarnate"><span>Doom Incarnate</span></div>
+                <div class="gallery-item"><img src="moskov3.jpg" alt="Twillight Dragon"><span>Twillight Dragon</span></div>
+            </div>
+            <div class="hero-story">
+                <h3>📖 MOSKOV'S BACKGROUND STORY</h3>
+                <p>Moskov was once a proud warrior and trusted companion. After his tribe was betrayed and destroyed, he was consumed by grief, fell into darkness, and became a ruthless warrior seeking revenge with his deadly spear.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openGallery(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        function closeGallery(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+    </script>
+
+</body>
+</html>
